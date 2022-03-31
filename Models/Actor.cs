@@ -4,7 +4,7 @@ namespace ActorsRestApi.Models
 {
     public class Actor
     {
-        public int Id { get; set; }
+        public int ActorId { get; set; }
 
         public string FirstName { get; set; }
 
@@ -13,5 +13,8 @@ namespace ActorsRestApi.Models
         public int Age { get; set; }
 
         public Guid CreatedBy { get; set; }
+
+        public ActorMovies ActorMovies { get; set; }
+
     }
 }
