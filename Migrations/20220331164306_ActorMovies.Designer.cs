@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ActorsRestApi.Migrations
 {
     [DbContext(typeof(ActorsRestApiContext))]
-    [Migration("20220331151550_ActorMovies")]
+    [Migration("20220331164306_ActorMovies")]
     partial class ActorMovies
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -68,13 +68,11 @@ namespace ActorsRestApi.Migrations
 
             modelBuilder.Entity("ActorsRestApi.Models.ActorMovies", b =>
                 {
-                    b.HasOne("ActorsRestApi.Models.Actor", "Actor")
+                    b.HasOne("ActorsRestApi.Models.Actor", null)
                         .WithOne("ActorMovies")
                         .HasForeignKey("ActorsRestApi.Models.ActorMovies", "ActorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Actor");
                 });
 
             modelBuilder.Entity("ActorsRestApi.Models.Actor", b =>

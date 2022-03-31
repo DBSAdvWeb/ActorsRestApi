@@ -8,7 +8,5 @@
 
         public int MovieId { get; set; }
 
-        public Actor Actor { get; set; }
-
     }
 }

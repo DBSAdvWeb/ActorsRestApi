@@ -66,13 +66,11 @@ namespace ActorsRestApi.Migrations
 
             modelBuilder.Entity("ActorsRestApi.Models.ActorMovies", b =>
                 {
-                    b.HasOne("ActorsRestApi.Models.Actor", "Actor")
+                    b.HasOne("ActorsRestApi.Models.Actor", null)
                         .WithOne("ActorMovies")
                         .HasForeignKey("ActorsRestApi.Models.ActorMovies", "ActorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Actor");
                 });
 
             modelBuilder.Entity("ActorsRestApi.Models.Actor", b =>
