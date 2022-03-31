@@ -47,7 +47,7 @@ namespace ActorsRestApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutActor(int id, Actor actor)
         {
-            if (id != actor.Id)
+            if (id != actor.ActorId)
             {
                 return BadRequest();
             }
@@ -81,7 +81,7 @@ namespace ActorsRestApi.Controllers
             _context.Actor.Add(actor);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetActor", new { id = actor.Id }, actor);
+            return CreatedAtAction("GetActor", new { id = actor.ActorId }, actor);
         }
 
         // DELETE: api/Actors/5
@@ -102,7 +102,7 @@ namespace ActorsRestApi.Controllers
 
         private bool ActorExists(int id)
         {
-            return _context.Actor.Any(e => e.Id == id);
+            return _context.Actor.Any(e => e.ActorId == id);
         }
     }
 }
